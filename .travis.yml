@@ -11,8 +11,6 @@ before_install:
         sudo apt-get install python3.6;
       elif [ `uname` = "Darwin" ]; then
         echo "Darwin";
-        #brew update;
-        #brew install python@3;
       fi
 script: 
     - if [ `uname` = "Linux" ]; then
