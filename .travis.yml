@@ -7,17 +7,17 @@ os:
 before_install:
     - if [ `uname` = "Linux" ]; then
         yes | sudo add-apt-repository ppa:deadsnakes/ppa
-        sudo apt-get update
-        sudo apt-get install python3.6
+        sudo apt-get update;
+        sudo apt-get install python3.6;
       elif [ `uname` = "Darwin" ]; then
-        brew update
-        brew install python@3
+        brew update;
+        brew install python@3;
       fi
 script: 
     - if [ `uname` = "Linux" ]; then
-        python3.6 build-skia.py --branch=master
+        python3.6 build-skia.py --branch=master;
       elif [ `uname` = "Darwin" ]; then
-        python3 build-skia-mac.py --branch=master
+        python3 build-skia-mac.py --branch=master;
       fi
 deploy:
   provider: releases
