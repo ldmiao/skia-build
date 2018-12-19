@@ -27,7 +27,7 @@ if not os.path.isdir('depot_tools'):
 # skia source
 if not os.path.isdir('skia'):
     run(['git', 'clone', 'https://skia.googlesource.com/skia'])
-    run(['./skia/tools/install_dependencies.sh'])
+    #run(['./skia/tools/install_dependencies.sh'])
 run(['git', '-C', 'skia', 'checkout', args.branch])
 run(['git', '-C', 'skia', 'pull'])
 run(['python', 'skia/tools/git-sync-deps'])
