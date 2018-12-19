@@ -1,10 +1,24 @@
 language: cpp
 compiler: clang
+os:
+    - linux
+    - osx
+
 before_install:
-- yes | sudo add-apt-repository ppa:deadsnakes/ppa
-- sudo apt-get update
-- sudo apt-get install python3.6
-script: python3.6 build-skia.py --branch=master
+    - if [ `uname` = "Linux" ]; then
+        yes | sudo add-apt-repository ppa:deadsnakes/ppa
+        sudo apt-get update
+        sudo apt-get install python3.6
+      elif [ `uname` = "Darwin" ]; then
+        brew update
+        brew install python@3
+      fi
+script: 
+    - if [ `uname` = "Linux" ]; then
+        python3.6 build-skia.py --branch=master
+      elif [ `uname` = "Darwin" ]; then
+        python3 build-skia-mac.py --branch=master
+      fi
 deploy:
   provider: releases
   api_key:
@@ -13,6 +27,9 @@ deploy:
     - "libskia-linux-x64.so"
     - "libskia-linux-x64.a"
     - "skia-headers.tar.gz"
+    - "libskia-darwin-x64.dylib"
+    - "libskia-darwin-x64.a"
+    - "skia-darwin-headers.tar.gz"
   skip_cleanup: true
   on:
     tags: true
