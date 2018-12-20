@@ -62,6 +62,6 @@ run(['./depot_tools/ninja', '-C', 'skia/out/linux-x64-static', 'skia'])
 run(['cp', 'skia/out/linux-x64-shared/libskia.so', 'libskia-linux-x64.so'])
 run(['strip', '-s', 'libskia-linux-x64.so'])
 run(['cp', 'skia/out/linux-x64-static/libskia.a', 'libskia-linux-x64.a'])
-run(['tar', '-czf', 'skia-headers.tar.gz', 'skia/include/'])
+run(['tar', '-czf', 'skia-headers-linux.tar.gz', 'skia/include/'])
 
 print("Finish")
