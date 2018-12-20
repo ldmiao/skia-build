@@ -29,6 +29,7 @@ deploy:
     - "libskia-darwin-x64.dylib"
     - "libskia-darwin-x64.a"
     - "skia-headers-darwin.tar.gz"
+    - "skia-all-darwin.tar.gz"
   skip_cleanup: true
   on:
     tags: true
