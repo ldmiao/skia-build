@@ -60,8 +60,8 @@ run(['./skia/bin/gn', '--root=skia', 'gen', 'skia/out/darwin-x64-static', '--arg
 run(['./depot_tools/ninja', '-C', 'skia/out/darwin-x64-static', 'skia'])
 
 run(['cp', 'skia/out/darwin-x64-shared/libskia.so', 'libskia-darwin-x64.dylib'])
-run(['strip', '-s', 'libskia-darwin-x64.dylib'])
+#run(['strip', '-s', 'libskia-darwin-x64.dylib'])
 run(['cp', 'skia/out/darwin-x64-static/libskia.a', 'libskia-darwin-x64.a'])
-run(['tar', '-czf', 'skia-darwin-headers.tar.gz', 'skia/include/'])
+run(['tar', '-czf', 'skia-headers-darwin.tar.gz', 'skia/include/'])
 
 print("Finish")
