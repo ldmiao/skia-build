@@ -14,7 +14,7 @@ before_install:
       fi
 script: 
     - if [ `uname` = "Linux" ]; then
-        python3.6 build-skia.py --branch=master;
+        python3.6 build-skia-linux.py --branch=master;
       elif [ `uname` = "Darwin" ]; then
         python3 build-skia-mac.py --branch=master;
       fi
@@ -26,6 +26,7 @@ deploy:
     - "libskia-linux-x64.so"
     - "libskia-linux-x64.a"
     - "skia-headers-linux.tar.gz"
+    - "skia-all-linux.tar.gz"
     - "libskia-darwin-x64.dylib"
     - "libskia-darwin-x64.a"
     - "skia-headers-darwin.tar.gz"
