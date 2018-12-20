@@ -14,9 +14,9 @@ before_install:
       fi
 script: 
     - if [ `uname` = "Linux" ]; then
-        python3.6 build-skia.py --branch=chrome/m71;
+        python3.6 build-skia.py --branch=chrome/m72;
       elif [ `uname` = "Darwin" ]; then
-        python3 build-skia-mac.py --branch=chrome/m71;
+        python3 build-skia-mac.py --branch=chrome/m72;
       fi
 deploy:
   provider: releases
