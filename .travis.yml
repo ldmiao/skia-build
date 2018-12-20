@@ -25,10 +25,10 @@ deploy:
   file:
     - "libskia-linux-x64.so"
     - "libskia-linux-x64.a"
-    - "skia-headers.tar.gz"
+    - "skia-headers-linux.tar.gz"
     - "libskia-darwin-x64.dylib"
     - "libskia-darwin-x64.a"
-    - "skia-darwin-headers.tar.gz"
+    - "skia-headers-darwin.tar.gz"
   skip_cleanup: true
   on:
     tags: true
