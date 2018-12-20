@@ -32,6 +32,8 @@ run(['git', '-C', 'skia', 'checkout', args.branch])
 run(['git', '-C', 'skia', 'pull'])
 run(['python', 'skia/tools/git-sync-deps'])
 
+run(['tar', '-czf', 'skia-all-linux.tar.gz', 'skia', 'depot_tools'])
+
 # build
 shared_args = [
     'is_debug=false',
