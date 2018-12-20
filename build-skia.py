@@ -34,6 +34,7 @@ run(['python', 'skia/tools/git-sync-deps'])
 
 # build
 shared_args = [
+    'is_debug=false',
     'is_component_build=true',
     'is_official_build=true',
     'skia_enable_tools=false',
@@ -45,6 +46,7 @@ shared_args = [
     'skia_use_system_libwebp=false skia_use_system_zlib=false',
     'skia_enable_gpu=true']
 static_args = [
+    'is_debug=false',
     'is_official_build=true',
     'skia_enable_tools=false',
     'target_os="linux" target_cpu="x64"',
