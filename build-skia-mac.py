@@ -65,5 +65,6 @@ run(['cp', 'skia/out/darwin-x64-shared/libskia.so', 'libskia-darwin-x64.dylib'])
 #run(['strip', '-s', 'libskia-darwin-x64.dylib'])
 run(['cp', 'skia/out/darwin-x64-static/libskia.a', 'libskia-darwin-x64.a'])
 run(['tar', '-czf', 'skia-headers-darwin.tar.gz', 'skia/include/'])
+run(['tar', '-czf', 'skia-all-darwin.tar.gz', 'skia', 'depot_tools'])
 
 print("Finish")
