@@ -42,7 +42,6 @@ shared_args = [
     'skia_enable_tools=false',
     'target_os="mac" target_cpu="x64"',
     'cc="clang" cxx="clang++"',
-    'skia_use_lua=true',
     'skia_use_icu=false skia_use_sfntly=false skia_use_piex=true',
     'skia_use_system_expat=false',
     'skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false',
@@ -54,7 +53,6 @@ static_args = [
     'skia_enable_tools=false',
     'target_os="mac" target_cpu="x64"',
     'cc="clang" cxx="clang++"',
-    'skia_use_lua=true',
     'skia_use_icu=false skia_use_sfntly=false skia_use_piex=true',
     'skia_use_system_expat=false',
     'skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false',
@@ -65,8 +63,8 @@ run(['./depot_tools/ninja', '-C', 'skia/out/darwin-x64-shared', 'skia'])
 run(['./skia/bin/gn', '--root=skia', 'gen', 'skia/out/darwin-x64-static', '--args=' + ' '.join(static_args)])
 run(['./depot_tools/ninja', '-C', 'skia/out/darwin-x64-static', 'skia'])
 
-run(['cp', 'skia/out/darwin-x64-shared/libskia.so', 'libskia-darwin-x64.dylib'])
-#run(['strip', '-s', 'libskia-darwin-x64.dylib'])
+run(['cp', 'skia/out/darwin-x64-shared/libskia.so', 'libskia-darwin-x64.so'])
+#run(['strip', '-s', 'libskia-darwin-x64.so'])
 run(['cp', 'skia/out/darwin-x64-static/libskia.a', 'libskia-darwin-x64.a'])
 run(['tar', '-czf', 'skia-headers-darwin.tar.gz', 'skia/include/'])
 #run(['tar', '-czf', 'skia-all-darwin.tar.gz', 'skia', 'depot_tools'])
